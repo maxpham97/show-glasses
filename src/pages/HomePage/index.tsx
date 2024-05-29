@@ -8,7 +8,7 @@ import Refresh from '../../assets/icons/refresh.svg';
 const HomePage = () => {
   const { t } = useTranslation();
 
-  const continent: IDataItem[] = [
+   const continent: IDataItem[] = [
     {
       title: t('Africa'),
       value: t('Africa'),

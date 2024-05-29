@@ -2,6 +2,7 @@ import React from 'react';
 import HomePage from '../pages/HomePage';
 import { Route, Routes } from 'react-router-dom';
 import Layout from '../components/Layout';
+import CreateGlasses from '../pages/CreateGlasses';
 
 export interface IRenderRoutes {
   path: string;
@@ -25,6 +26,10 @@ export const routes: IRenderRoutes[] = [
   {
     path: '/home',
     component: <HomePage />,
+  },
+  {
+    path: '/createGlasses',
+    component: <CreateGlasses />,
   },
 ];
 

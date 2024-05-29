@@ -9,12 +9,12 @@
 .content {
   margin-top: 60px;
   display: flex;
-  gap: 35px;
+  gap: 30px;
 }
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 столбца с равной шириной */
+  grid-template-columns: repeat(4, 243px); /* 4 столбца с равной шириной */
   gap: 30px; /* промежуток между карточками */
 }
 
