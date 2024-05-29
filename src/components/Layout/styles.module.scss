@@ -1,0 +1,53 @@
+@import '../../assets/css/variable.scss';
+.layout {
+  max-width: 1278px;
+}
+.navBar {
+  margin: 10px 0px 20px 0px;
+  display: flex;
+  width: 1278px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-family: Pacifico;
+  font-size: 41.06px;
+  font-weight: 400;
+  line-height: 72.1px;
+  text-align: left;
+  color: $primary;
+}
+
+.inputContainer {
+  width: 413px;
+  padding: 10px 20px 10px 20px;
+  display: flex;
+  gap: 10px;
+  border-radius: 10px;
+  border: 1px solid $primary;
+}
+
+.searchInput {
+  background-color: transparent;
+  border: none;
+  width: 100%;
+}
+.searchInput:focus {
+  outline: none;
+}
+
+.loginButton {
+  font-family: Road UI;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 27px;
+  text-align: left;
+  width: 100px;
+  border: none;
+  background-color: transparent;
+  color: $primary;
+  cursor: pointer;
+}

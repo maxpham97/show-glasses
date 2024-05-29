@@ -1,0 +1,18 @@
+@import '../../assets/css/variable.scss';
+.button {
+  cursor: pointer;
+  background-color: transparent;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 27px;
+  text-align: left;
+  width: 40px;
+  height: 27px;
+  border: none;
+  color: $primary;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+.button.inactive {
+  opacity: 0.5;
+}

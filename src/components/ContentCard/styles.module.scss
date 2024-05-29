@@ -1,0 +1,25 @@
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 243px;
+  height: 289px;
+  padding: 20px 30px 20px 30px;
+  gap: 12px;
+  border-radius: 10px;
+  border: 1px solid #666666;
+  opacity: 0px;
+  cursor: pointer;
+}
+
+.card:hover {
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+}
+
+.title {
+  font-family: Road UI;
+  font-size: 18px;
+  line-height: 27px;
+  text-align: left;
+}
