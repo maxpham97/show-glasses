@@ -1,0 +1,17 @@
+@import '../../assets/css/variable.scss';
+
+.customButton {
+  width: 150px;
+  height: 47px;
+  padding: 10px 20px 10px 20px;
+  gap: 10px;
+  border-radius: 10px;
+  opacity: 0px;
+  background-color: $primary;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-family: Road UI;
+  font-size: 18px;
+  line-height: 27px;
+}

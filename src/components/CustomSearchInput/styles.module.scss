@@ -1,0 +1,18 @@
+@import '../../assets/css/variable.scss';
+.inputContainer {
+  width: 310px;
+  padding: 10px 20px 10px 20px;
+  display: flex;
+  gap: 10px;
+  border-radius: 10px;
+  border: 1px solid $primary;
+}
+
+.searchInput {
+  background-color: transparent;
+  border: none;
+  width: 100%;
+}
+.searchInput:focus {
+  outline: none;
+}
