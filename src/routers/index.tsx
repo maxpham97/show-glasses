@@ -3,6 +3,7 @@ import HomePage from '../pages/HomePage';
 import { Route, Routes } from 'react-router-dom';
 import Layout from '../components/Layout';
 import CreateGlasses from '../pages/CreateGlasses';
+import Dashboard from '../pages/Dashboard';
 
 export interface IRenderRoutes {
   path: string;
@@ -30,6 +31,10 @@ export const routes: IRenderRoutes[] = [
   {
     path: '/createGlasses',
     component: <CreateGlasses />,
+  },
+  {
+    path: '/dashBoard',
+    component: <Dashboard />,
   },
 ];
 
