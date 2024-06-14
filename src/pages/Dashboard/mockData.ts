@@ -1,0 +1,26 @@
+export const mockData = [
+    {
+        id:1,
+        name:"Max",
+        age:25,
+        jobTittle:"FE"
+    },
+    {
+        id:2,
+        name:"Sasha",
+        age:25,
+        jobTittle:"FE"
+    },
+    {
+        id:3,
+        name:"Jenya",
+        age:25,
+        jobTittle:"FE"
+    },
+    {
+        id:4,
+        name:"Oleg",
+        age:25,
+        jobTittle:"FE"
+    },
+]
