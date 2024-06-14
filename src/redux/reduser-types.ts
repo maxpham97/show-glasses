@@ -1,3 +1,5 @@
+import { IProduct } from '../components/ContentCard';
+
 /* eslint-disable @typescript-eslint/no-explicit-any */
 export type CustomTableReducerType = {
   pageIndex: number;
@@ -21,9 +23,18 @@ export type CustomTableReducerType = {
 };
 
 export interface IBaseAction {
-    type:string
+  type: string;
 }
 
 export interface ICustomTableAction extends IBaseAction {
-    payload: Partial<CustomTableReducerType>
+  payload: Partial<CustomTableReducerType>;
+}
+
+
+export type BasketReducerType = {
+  basketProducts: IProduct[];
+};
+
+export interface IBasketAction extends IBaseAction {
+  payload: IProduct;
 }

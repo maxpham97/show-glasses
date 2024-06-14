@@ -2,13 +2,14 @@ import React from 'react';
 import styles from './styles.module.scss';
 import { useTranslation } from 'react-i18next';
 import Filter, { IDataItem } from '../../components/Filter';
-import ContentCard from '../../components/ContentCard';
+import ContentCard, { IProduct } from '../../components/ContentCard';
 import Refresh from '../../assets/icons/refresh.svg';
+import { mockData } from './mockData';
 
 const HomePage = () => {
   const { t } = useTranslation();
 
-   const continent: IDataItem[] = [
+  const continent: IDataItem[] = [
     {
       title: t('Africa'),
       value: t('Africa'),
@@ -51,8 +52,8 @@ const HomePage = () => {
           <Filter title={t('Continent')} data={continent} />
         </div>
         <div className={styles.grid}>
-          {[...Array(8)].map((_, index: number) => (
-            <ContentCard key={index} />
+          {mockData.map((item: IProduct, index: number) => (
+            <ContentCard {...item} key={index} />
           ))}
         </div>
       </div>
