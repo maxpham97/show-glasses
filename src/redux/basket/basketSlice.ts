@@ -7,55 +7,54 @@ import { RootState } from '../store';
 import { IProduct } from '../../components/ContentCard';
 
 const initialState: BasketReducerType = {
-  basketProducts: [],
+    basketProducts: [],
 };
 
 const basketSlice = createSlice({
-  initialState,
-  name: REDUX_SLICE_NAMES.BASKET_STATE,
-  reducers: {
-    addToBasket: (state, action: IBasketAction) => {
-      const existingProduct = state.basketProducts.find((item) => item.id === action.payload.id);
-      if (existingProduct && existingProduct.quantity) {
-        existingProduct.quantity += 1;
-      } else {
-        state.basketProducts.push({ ...action.payload, quantity: 1 });
-      }
-    },
-    minusFromBasket: (state, action: IBasketAction) => {
-      const newState = state.basketProducts.map((item: IProduct) => {
-        if (action.payload.id === item.id && item.quantity) {
-          return {
-            ...item,
-            quantity: item.quantity - 1,
-          };
-        }
-        return { ...item };
-      });
+    initialState,
+    name: REDUX_SLICE_NAMES.BASKET_STATE,
+    reducers: {
+        addToBasket: (state, action: IBasketAction) => {
+            const existingProduct = state.basketProducts.find((item) => item.id === action.payload.id);
 
-      state.basketProducts = newState;
+            if (existingProduct) {
+                existingProduct.quantity = (existingProduct.quantity || 0) + 1;
+            } else {
+                state.basketProducts.push({ ...action.payload, quantity: 1 });
+            }
+        },
+        minusFromBasket: (state, action: IBasketAction) => {
+            const existingProduct = state.basketProducts.find((item) => item.id === action.payload.id);
+            if (existingProduct && existingProduct.quantity) {
+                if (existingProduct.quantity > 1) {
+                    existingProduct.quantity -= 1;
+                } else if (existingProduct.quantity === 1) {
+                    state.basketProducts = state.basketProducts.filter((item) => item.id !== action.payload.id);
+                }
+            }
+        },
+        resetBasket: (state) => {
+            state.basketProducts = [];
+        },
     },
-    resetBasket: () => initialState,
-  },
 });
 
-const { addToBasket, resetBasket,minusFromBasket } = basketSlice.actions;
+const { addToBasket, resetBasket, minusFromBasket } = basketSlice.actions;
 
-export const useGetBasketState = () =>
-  useAppSelector((state: RootState) => state[basketSlice.name] as BasketReducerType);
+export const useGetBasketState = () => useAppSelector((state: RootState) => state[basketSlice.name] as BasketReducerType);
 
 export const useSetBasketState = () => {
-  const dispatch = useAppDispatch();
+    const dispatch = useAppDispatch();
 
-  return {
-    addToBasket: (fields: IProduct) => {
-      dispatch(addToBasket(fields as any));
-    },
-    minusFromBasket:(fields: IProduct) => {
-        dispatch(minusFromBasket(fields as any))
-    },
-    resetBasket: () => dispatch(resetBasket()),
-  };
+    return {
+        addToBasket: (fields: IProduct) => {
+            dispatch(addToBasket(fields as any));
+        },
+        minusFromBasket: (fields: IProduct) => {
+            dispatch(minusFromBasket(fields as any));
+        },
+        resetBasket: () => dispatch(resetBasket()),
+    };
 };
 
 export default basketSlice;
