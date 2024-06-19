@@ -1,7 +1,7 @@
 import { useGetDashBoardData } from '../../resources/dashboard';
 import { TableColumn } from '../../components/cutomTable/types';
-import GeneralSearchField from '../../components/cutomTable/GeneralSearchField';
-import CustomTable from '../../components/cutomTable/CustomTable';
+import CustomTable from '../../components/CutomTable/CustomTable';
+import GeneralSearchField from '../../components/CutomTable/GeneralSearchField';
 
 const Dashboard = () => {
     const { data } = useGetDashBoardData();

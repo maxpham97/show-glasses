@@ -1,0 +1,54 @@
+:root {
+  --tile-size: 100px;
+  --light-tile: #f0d8b7;
+  --dark-tile: #b48764;
+  --bg-color: #202020;
+}
+
+.box {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #302e2b;
+}
+
+.board {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: calc(0.25 * var(--tile-size)) calc(8 * var(--tile-size));
+}
+
+.tiles {
+  display: grid;
+  grid-template-columns: repeat(8, var(--tile-size));
+  grid-template-rows: repeat(8, var(--tile-size));
+  width: calc(8 * var(--tile-size));
+}
+
+.tile {
+}
+
+.tile--light {
+  background: #ebecd1;
+}
+
+.tile--dark {
+  background: #749555;
+}
+
+.files {
+  grid-column: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  color: #b48764;
+}
+
+.ranks {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  color: #b48764;
+}

@@ -4,6 +4,7 @@ import { Route, Routes } from 'react-router-dom';
 import Layout from '../components/Layout';
 import CreateGlasses from '../pages/CreateGlasses';
 import Dashboard from '../pages/Dashboard';
+import Chess from '../pages/Chess';
 
 export interface IRenderRoutes {
   path: string;
@@ -36,6 +37,10 @@ export const routes: IRenderRoutes[] = [
     path: '/dashBoard',
     component: <Dashboard />,
   },
+  {
+    path:'/chess',
+    component:<Chess/>
+  }
 ];
 
 export default renderRoutes;
